@@ -1,0 +1,16 @@
+{
+  "name": "front-everyday",
+  "version": "1.0.0",
+  "description": "make a front demo everyday",
+  "main": "index.js",
+  "author": "cecil",
+  "license": "MIT",
+  "bin": {
+    "gencli": "./cli/index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "commander": "^8.0.0",
+    "ora": "^5.4.1"
+  }
+}
