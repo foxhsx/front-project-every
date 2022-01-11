@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>每天一个前端小练习</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">每天一个前端小练习</h1>
+    <p>收集了网上的一些前端效果，前期主要是在 github 上找的 50project 项目</p>
+    <table border>
+      <tr>
+        <th>序号</th>
+        <th>链接</th>
+      </tr>
+      <tbody id="tbody"></tbody>
+    </table>
+  </body>
+</html>
+<script>
+  const tbody = document.getElementById("tbody");
+  const linkItem = [
+    { href: "./expanding-cards/", label: "折叠板" },
+    { href: "./blurry-loading/", label: "毛玻璃" },
+    { href: "./hidden-search/", label: "搜索框" },
+    { href: "./Progress-Steps/", label: "进度条" },
+    { href: "./rotating-nav-animation/", label: "旋转导航" },
+    { href: "./scroll-animation/", label: "滚动动画" },
+    { href: "./sound-board/", label: "音响盒子" },
+    { href: "./split-landing-page/", label: "分割页面" },
+    { href: "./form-wave/", label: "表单登陆" },
+  ];
+  linkItem.forEach((item, index) => {
+    const tr = document.createElement("tr");
+    const trContent = `<td>${index + 1}</td><td><a href="${item.href}">${
+      item.label
+    }</td>`;
+    tr.innerHTML = trContent;
+    tbody.appendChild(tr);
+  });
+</script>
