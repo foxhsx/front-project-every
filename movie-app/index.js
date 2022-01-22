@@ -1,14 +1,17 @@
 const API_URL = "https://api.wmdb.tv/api/v1/movie/search?q=";
+const TOP_URL =
+  "https://api.wmdb.tv/api/v1/top?type=Douban&skip=0&limit=50&lang=Cn";
 
 const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
+getMovie(TOP_URL);
+
 async function getMovie(url) {
   const res = await fetch(url);
   const data = await res.json();
 
-  console.log(res, data, "ddd");
   showMovies(data);
 }
 
