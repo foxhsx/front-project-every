@@ -79,9 +79,9 @@ function seTime() {
   dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
 }
 
-const scale = (num, in_min, in_max, out_min, out_max) => {
-  return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
-};
+function scale(num, in_min, in_max, out_min, out_max) {
+  return ((out_max - out_min) / (in_max - in_min)) * num;
+}
 
 seTime();
 
