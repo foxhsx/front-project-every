@@ -89,6 +89,18 @@
       .box a:hover {
         background-color: rgb(102, 177, 255);
       }
+      .box .count {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        background-color: #2ecc71;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -169,10 +181,13 @@
 
   function createItem(item, index) {
     const box = `
+      <p class="count">${index + 1}</p>
       <i class="before fas fa-${icons[index]}"></i>
       <i class="after fas fa-${icons[index]}"></i>
       <h2>${item.label}</h2>
-      <a href="${item.href}" target="_blank">Link <i class="fas fa-share-alt"></i></a>
+      <a href="${
+        item.href
+      }" target="_blank">Link <i class="fas fa-share-alt"></i></a>
     `;
     const div = document.createElement("div");
     div.classList.add("box");
