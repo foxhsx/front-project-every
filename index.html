@@ -4,22 +4,101 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <title>每天一个前端小练习</title>
+    <style type="text/css">
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      #list {
+        background-color: #efedd6;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+        overflow-x: hidden;
+        padding-top: 25px;
+      }
+      .box {
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 400px;
+        height: 200px;
+        margin: 10px;
+        border-radius: 10px;
+        transform: translateX(500%);
+        transition: all 0.4s ease;
+        position: relative;
+      }
+      .box:hover {
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+      }
+      .box:nth-of-type(even) {
+        transform: translateX(-500%);
+      }
+      .box .before,
+      .box .after {
+        font-family: "Font Awesome 5 Free";
+        color: #2ecc71;
+        font-size: 6rem;
+        position: absolute;
+        opacity: 0.2;
+        top: 60px;
+        left: 60px;
+        z-index: 0;
+      }
+      .box .before {
+        color: #3498db;
+        top: 10px;
+        left: 10px;
+        transform: rotateY(180deg);
+      }
+
+      .box.show {
+        transform: translateX(0);
+      }
+      .box a {
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 76px;
+        height: 32px;
+        line-height: 1;
+        box-sizing: border-box;
+        background-color: #409eff;
+        color: #fff;
+        text-align: center;
+        transition: transform 0.3s linear;
+        font-size: 14px;
+        padding: 8px 15px;
+        border-radius: 20px;
+      }
+      .box a:hover {
+        background-color: rgb(102, 177, 255);
+      }
+    </style>
   </head>
   <body>
-    <h1 style="text-align: center">每天一个前端小练习</h1>
+    <h1>每天一个前端小练习</h1>
     <p>收集了网上的一些前端效果，前期主要是在 github 上找的 50project 项目</p>
-    <table border>
-      <tr>
-        <th>序号</th>
-        <th>链接</th>
-      </tr>
-      <tbody id="tbody"></tbody>
-    </table>
+    <div id="list"></div>
   </body>
 </html>
 <script>
-  const tbody = document.getElementById("tbody");
+  const list = document.getElementById("list");
   const linkItem = [
     { href: "./expanding-cards/", label: "折叠板" },
     { href: "./blurry-loading/", label: "毛玻璃" },
@@ -52,12 +131,72 @@
     { href: "./auto-text-effect/", label: "自动文本效果" },
     { href: "./password-gen/", label: "密码生成器" },
   ];
+  const icons = [
+    "folder-open",
+    "glass-whiskey",
+    "search",
+    "spinner",
+    "location-arrow",
+    "scroll",
+    "volume-up",
+    "columns",
+    "sign-in-alt",
+    "smile-wink",
+    "keyboard",
+    "question-circle",
+    "check-square",
+    "ellipsis-v",
+    "plus-circle",
+    "coffee",
+    "video",
+    "clock",
+    "water",
+    "dropbox",
+    "drafting-compass",
+    "",
+    "truck-loading",
+    "tape",
+    "sliders-h",
+    "comment",
+    "github",
+    "heart",
+    "file-alt",
+    "key",
+  ];
   linkItem.forEach((item, index) => {
-    const tr = document.createElement("tr");
-    const trContent = `<td>${index + 1}</td><td><a href="${item.href}">${
-      item.label
-    }</td>`;
-    tr.innerHTML = trContent;
-    tbody.appendChild(tr);
+    createItem(item, index);
   });
+
+  function createItem(item, index) {
+    const box = `
+      <i class="before fas fa-${icons[index]}"></i>
+      <i class="after fas fa-${icons[index]}"></i>
+      <h2>${item.label}</h2>
+      <a href="${item.href}" target="_blank">Link <i class="fas fa-share-alt"></i></a>
+    `;
+    const div = document.createElement("div");
+    div.classList.add("box");
+    div.innerHTML = box;
+    list.appendChild(div);
+  }
+
+  const boxes = document.querySelectorAll(".box");
+
+  window.addEventListener("scroll", checkBoxes);
+
+  checkBoxes();
+
+  function checkBoxes() {
+    const triggerBottom = (window.innerHeight / 5) * 4;
+
+    boxes.forEach((box) => {
+      const boxTop = box.getBoundingClientRect().top;
+
+      if (boxTop < triggerBottom) {
+        box.classList.add("show");
+      } else {
+        box.classList.remove("show");
+      }
+    });
+  }
 </script>
