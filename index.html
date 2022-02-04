@@ -102,9 +102,50 @@
         color: #fff;
         padding: 5px;
       }
+      .repo {
+        float: right;
+        top: 10px;
+        right: 10px;
+        width: 160px;
+        border: 1px solid #000;
+        color: #333;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0px 8px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .repo:hover {
+        color: #fff;
+        border-color: #fff;
+        background-color: #333;
+      }
+      .repo p {
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .repo .like {
+        font-size: 12px;
+        white-space: nowrap;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
+    <a
+      class="repo"
+      href="https://github.com/foxhsx/front-project-every"
+      target="_blank"
+    >
+      <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+      <div>
+        <p>Github 地址</p>
+        <p class="like">喜欢的话点个 Star 吧</p>
+      </div>
+    </a>
     <h1>每天一个前端小练习</h1>
     <p>收集了网上的一些前端效果，前期主要是在 github 上找的 50project 项目</p>
     <div id="list"></div>
@@ -145,6 +186,7 @@
     { href: "./password-gen/", label: "密码生成器" },
     { href: "./background-slider/", label: "背景轮播图" },
     { href: "./switch/", label: "Switch" },
+    { href: "./notes-app/", label: "笔记本" },
   ];
   const icons = [
     "folder-open",
@@ -179,6 +221,7 @@
     "key",
     "",
     "toggle-on",
+    "sticky-note",
   ];
   linkItem.forEach((item, index) => {
     createItem(item, index);

@@ -105,3 +105,9 @@ body::before {
 .right-arrow {
   right: calc(15vw - 65px);
 }
+@media (max-width: 375px) {
+  #note.show {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+}
