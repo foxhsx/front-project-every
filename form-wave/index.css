@@ -16,6 +16,60 @@ body {
   color: #fff;
 }
 
+#note {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 15px;
+  border: 1px solid;
+  border-color: #000;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 100;
+}
+#note.show {
+  width: 400px;
+  height: 600px;
+  right: 20px;
+  bottom: 10px;
+  overflow-y: scroll;
+}
+#note.show .close {
+  content: "X";
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 101;
+}
+#note:active {
+  transform: scale(0.98);
+}
+#note code {
+  color: #476582;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+#note blockquote {
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: #f8f8f8;
+  border-color: #42b983;
+}
+
+@media (max-width: 375px) {
+  #note.show {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+}
+
 .container {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 20px 40px;

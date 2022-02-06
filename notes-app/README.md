@@ -1,4 +1,4 @@
-b### 展示效果
+### 展示效果
 
 [笔记](http://project-demo.ihsxu.com/notes-app/)
 
