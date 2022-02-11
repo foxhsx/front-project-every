@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Live User Filter</title>
+  </head>
+  <body>
+    <div class="contanier">
+      <header class="header">
+        <h4 class="title">Live User Filter</h4>
+        <small class="subtitle">Search by name and/or location</small>
+        <input type="text" id="filter" placeholder="Search" />
+      </header>
+
+      <ul id="result" class="user-list">
+        <li>
+          <h3>Loading...</h3>
+        </li>
+      </ul>
+    </div>
+    <div id="note">Note</div>
+  </body>
+</html>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.25.0/axios.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/marked/4.0.2/marked.min.js"></script>
+<script src="./index.js"></script>
