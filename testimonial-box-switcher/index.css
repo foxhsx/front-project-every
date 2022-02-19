@@ -1,0 +1,150 @@
+@import url("../font/montserrat.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 10px;
+}
+
+#note {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 15px;
+  border-color: #fff;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 100;
+}
+#note.show {
+  width: 400px;
+  height: 600px;
+  right: 20px;
+  bottom: 10px;
+  overflow-y: scroll;
+}
+#note.show .close {
+  content: "X";
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 101;
+}
+#note:active {
+  transform: scale(0.98);
+}
+#note code {
+  color: #476582;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+#note blockquote {
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: #f8f8f8;
+  border-color: #42b983;
+}
+
+@media (max-width: 375px) {
+  #note.show {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+}
+
+.container {
+  background-color: #476ce4;
+  color: #fff;
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 50px 80px;
+  max-width: 768px;
+  position: relative;
+}
+
+.fa-quote {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 28px;
+  position: absolute;
+  top: 70px;
+}
+
+.fa-quote-right {
+  left: 40px;
+}
+
+.fa-quote-left {
+  right: 40px;
+}
+
+.testimonial {
+  line-height: 28px;
+  text-align: justify;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user .user-image {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+
+.user .user-details {
+  margin-left: 10px;
+}
+
+.user .username {
+  margin: 0;
+}
+
+.user .role {
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  background-color: #fff;
+  height: 4px;
+  width: 100%;
+  animation: grow 10s linear infinite;
+  transform-origin: left;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 30px;
+  }
+  .fa-quote {
+    display: none;
+  }
+}
