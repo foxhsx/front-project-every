@@ -18,7 +18,7 @@
       }
       #list {
         background-color: #efedd6;
-        font-family: "Roboto", sans-serif;
+        font-family: 'Roboto', sans-serif;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -50,7 +50,7 @@
       }
       .box .before,
       .box .after {
-        font-family: "Font Awesome 5 Free";
+        font-family: 'Font Awesome 5 Free';
         color: #2ecc71;
         font-size: 6rem;
         position: absolute;
@@ -148,7 +148,7 @@
     </a>
     <h1>每天一个前端小练习</h1>
     <p>
-      收集了网上的一些前端效果，前期主要是在 github 上找的<a
+      收集了网上的一些前端效果，前50个主要是在 github 上找的<a
         href="https://github.com/bradtraversy/50projects50days"
         target="_blank"
       >
@@ -159,110 +159,112 @@
   </body>
 </html>
 <script>
-  const list = document.getElementById("list");
+  const list = document.getElementById('list');
   const linkItem = [
-    { href: "./expanding-cards/", label: "折叠板" },
-    { href: "./blurry-loading/", label: "毛玻璃" },
-    { href: "./hidden-search/", label: "搜索框" },
-    { href: "./Progress-Steps/", label: "进度条" },
-    { href: "./rotating-nav-animation/", label: "旋转导航" },
-    { href: "./scroll-animation/", label: "滚动动画" },
-    { href: "./sound-board/", label: "音响盒子" },
-    { href: "./split-landing-page/", label: "分割页面" },
-    { href: "./form-wave/", label: "表单登陆" },
-    { href: "./dad-jokes/", label: "随机冷笑话" },
-    { href: "./event-keycodes/", label: "键盘事件" },
-    { href: "./faq-collapse/", label: "常用问题" },
-    { href: "./random-choice-picker/", label: "随机选中" },
-    { href: "./animated-nav/", label: "导航动画" },
-    { href: "./incrementing-counter/", label: "增量计数器" },
-    { href: "./drink-water/", label: "喝水" },
-    { href: "./movie-app/", label: "电影" },
-    { href: "./theme-clock/", label: "主题时钟" },
-    { href: "./button-ripple-effect/", label: "波纹按钮" },
-    { href: "./drag-drop/", label: "拖拽" },
-    { href: "./drawing-app/", label: "绘图本" },
-    { href: "./kinetic-loader/", label: "永动机" },
-    { href: "./content-placeholder/", label: "小小骨架屏" },
-    { href: "./sticky-navigation/", label: "吸顶" },
-    { href: "./vertical-slider/", label: "双向轮播图" },
-    { href: "./toast/", label: "轻提示" },
-    { href: "./github-profile/", label: "github 搜索框" },
-    { href: "./double-click/", label: "双击喜欢" },
-    { href: "./auto-text-effect/", label: "自动文本效果" },
-    { href: "./password-gen/", label: "密码生成器" },
-    { href: "./background-slider/", label: "背景轮播图" },
-    { href: "./switch/", label: "Switch" },
-    { href: "./notes-app/", label: "笔记本" },
-    { href: "./animated-countdown/", label: "倒计时" },
-    { href: "./image-carousel/", label: "图片轮播" },
-    { href: "./hover-board/", label: "悬停板" },
-    { href: "./pokedex/", label: "调色板" },
-    { href: "./mobile-tab-navigation/", label: "移动端导航" },
-    { href: "./password-strength-background/", label: "密码强度背景" },
-    { href: "./3d-boxes-background/", label: "3D背景盒子" },
-    { href: "./verify-account/", label: "验证账户" },
-    { href: "./live-user-filter/", label: "过滤用户" },
-    { href: "./feedback/", label: "用户反馈" },
-    { href: "./custom-range-slider/", label: "自定义滑块" },
-    { href: "./netflix-mobile-nav/", label: "移动端导航" },
-    { href: "./quiz-app/", label: "答题APP" },
-    { href: "./testimonial-box-switcher/", label: "盒子切换" },
-    { href: "./random-image/", label: "随机图片" },
-    { href: "./todo-list/", label: "TodoList" },
-    { href: "./catch-the-insect/", label: "抓虫" },
+    { href: './expanding-cards/', label: '折叠板' },
+    { href: './blurry-loading/', label: '毛玻璃' },
+    { href: './hidden-search/', label: '搜索框' },
+    { href: './Progress-Steps/', label: '进度条' },
+    { href: './rotating-nav-animation/', label: '旋转导航' },
+    { href: './scroll-animation/', label: '滚动动画' },
+    { href: './sound-board/', label: '音响盒子' },
+    { href: './split-landing-page/', label: '分割页面' },
+    { href: './form-wave/', label: '表单登陆' },
+    { href: './dad-jokes/', label: '随机冷笑话' },
+    { href: './event-keycodes/', label: '键盘事件' },
+    { href: './faq-collapse/', label: '常用问题' },
+    { href: './random-choice-picker/', label: '随机选中' },
+    { href: './animated-nav/', label: '导航动画' },
+    { href: './incrementing-counter/', label: '增量计数器' },
+    { href: './drink-water/', label: '喝水' },
+    { href: './movie-app/', label: '电影' },
+    { href: './theme-clock/', label: '主题时钟' },
+    { href: './button-ripple-effect/', label: '波纹按钮' },
+    { href: './drag-drop/', label: '拖拽' },
+    { href: './drawing-app/', label: '绘图本' },
+    { href: './kinetic-loader/', label: '永动机' },
+    { href: './content-placeholder/', label: '小小骨架屏' },
+    { href: './sticky-navigation/', label: '吸顶' },
+    { href: './vertical-slider/', label: '双向轮播图' },
+    { href: './toast/', label: '轻提示' },
+    { href: './github-profile/', label: 'github 搜索框' },
+    { href: './double-click/', label: '双击喜欢' },
+    { href: './auto-text-effect/', label: '自动文本效果' },
+    { href: './password-gen/', label: '密码生成器' },
+    { href: './background-slider/', label: '背景轮播图' },
+    { href: './switch/', label: 'Switch' },
+    { href: './notes-app/', label: '笔记本' },
+    { href: './animated-countdown/', label: '倒计时' },
+    { href: './image-carousel/', label: '图片轮播' },
+    { href: './hover-board/', label: '悬停板' },
+    { href: './pokedex/', label: '调色板' },
+    { href: './mobile-tab-navigation/', label: '移动端导航' },
+    { href: './password-strength-background/', label: '密码强度背景' },
+    { href: './3d-boxes-background/', label: '3D背景盒子' },
+    { href: './verify-account/', label: '验证账户' },
+    { href: './live-user-filter/', label: '过滤用户' },
+    { href: './feedback/', label: '用户反馈' },
+    { href: './custom-range-slider/', label: '自定义滑块' },
+    { href: './netflix-mobile-nav/', label: '移动端导航' },
+    { href: './quiz-app/', label: '答题APP' },
+    { href: './testimonial-box-switcher/', label: '盒子切换' },
+    { href: './random-image/', label: '随机图片' },
+    { href: './todo-list/', label: 'TodoList' },
+    { href: './catch-the-insect/', label: '抓虫' },
+    { href: './word-effect/', label: '文字消失效果' },
   ];
   const icons = [
-    "folder-open",
-    "glass-whiskey",
-    "search",
-    "spinner",
-    "location-arrow",
-    "scroll",
-    "volume-up",
-    "columns",
-    "sign-in-alt",
-    "smile-wink",
-    "keyboard",
-    "question-circle",
-    "check-square",
-    "ellipsis-v",
-    "plus-circle",
-    "coffee",
-    "video",
-    "clock",
-    "water",
-    "dropbox",
-    "drafting-compass",
-    "",
-    "truck-loading",
-    "tape",
-    "sliders-h",
-    "comment",
-    "github",
-    "heart",
-    "file-alt",
-    "key",
-    "",
-    "toggle-on",
-    "sticky-note",
-    "stopwatch",
-    "images",
-    "chess-board",
-    "tint",
-    "mobile-alt",
-    "lock",
-    "cube",
-    "user-check",
-    "filter",
-    "comment-alt",
-    "exchange",
-    "bars",
-    "question",
-    "light-switch",
-    "random",
-    "calendor-check",
-    "gamepad",
+    'folder-open',
+    'glass-whiskey',
+    'search',
+    'spinner',
+    'location-arrow',
+    'scroll',
+    'volume-up',
+    'columns',
+    'sign-in-alt',
+    'smile-wink',
+    'keyboard',
+    'question-circle',
+    'check-square',
+    'ellipsis-v',
+    'plus-circle',
+    'coffee',
+    'video',
+    'clock',
+    'water',
+    'dropbox',
+    'drafting-compass',
+    '',
+    'truck-loading',
+    'tape',
+    'sliders-h',
+    'comment',
+    'github',
+    'heart',
+    'file-alt',
+    'key',
+    '',
+    'toggle-on',
+    'sticky-note',
+    'stopwatch',
+    'images',
+    'chess-board',
+    'tint',
+    'mobile-alt',
+    'lock',
+    'cube',
+    'user-check',
+    'filter',
+    'comment-alt',
+    'exchange',
+    'bars',
+    'question',
+    'light-switch',
+    'random',
+    'calendor-check',
+    'gamepad',
+    'file-word',
   ];
   linkItem.forEach((item, index) => {
     createItem(item, index);
@@ -278,15 +280,15 @@
         item.href
       }" target="_blank">Link <i class="fas fa-share-alt"></i></a>
     `;
-    const div = document.createElement("div");
-    div.classList.add("box");
+    const div = document.createElement('div');
+    div.classList.add('box');
     div.innerHTML = box;
     list.appendChild(div);
   }
 
-  const boxes = document.querySelectorAll(".box");
+  const boxes = document.querySelectorAll('.box');
 
-  window.addEventListener("scroll", checkBoxes);
+  window.addEventListener('scroll', checkBoxes);
 
   checkBoxes();
 
@@ -297,9 +299,9 @@
       const boxTop = box.getBoundingClientRect().top;
 
       if (boxTop < triggerBottom) {
-        box.classList.add("show");
+        box.classList.add('show');
       } else {
-        box.classList.remove("show");
+        box.classList.remove('show');
       }
     });
   }
