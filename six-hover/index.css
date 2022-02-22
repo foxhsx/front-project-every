@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 #note {
   position: fixed;
   right: 10px;
