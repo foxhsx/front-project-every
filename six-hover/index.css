@@ -182,3 +182,100 @@ body {
   transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s,
     height 0.6s ease-out 0.9s;
 }
+
+#frozen-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+#frozen-btn button {
+  border: 0;
+  margin: 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 50px;
+  border-radius: 50px;
+  color: white;
+  outline: none;
+  position: relative;
+}
+
+#frozen-btn button::before {
+  content: '';
+  display: block;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.3) 50%
+  );
+  background-size: 210% 100%;
+  background-position: right bottom;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50px;
+  transition: all 1s;
+}
+
+#frozen-btn .green {
+  background-image: linear-gradient(to right, #25aae1, #40e495);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+#frozen-btn .purple {
+  background-image: linear-gradient(to right, #6253e1, #852091);
+  box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+
+#frozen-btn .green:hover::before,
+#frozen-btn .purple:hover::before {
+  background-position: left bottom;
+}
+
+#shiny-shadow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  background-color: #1c2541;
+}
+
+#shiny-shadow button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 15px 50px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+}
+
+#shiny-shadow span {
+  z-index: 20;
+}
+
+#shiny-shadow button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -36px;
+  left: -100px;
+  background-color: #fff;
+  width: 50px;
+  height: 125px;
+  opacity: 0.2;
+  transform: rotate(45deg);
+}
+
+#shiny-shadow button:hover::after {
+  left: 120%;
+  transition: all 600ms cubic-bezier(0.3, 1, 0.2, 1);
+}
