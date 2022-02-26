@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: '', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #06181f;
+}
+
+#note {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 15px;
+  border-color: #fff;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 100;
+}
+#note.show {
+  width: 400px;
+  height: 600px;
+  right: 20px;
+  bottom: 10px;
+  overflow-y: scroll;
+}
+#note.show .close {
+  content: 'X';
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 101;
+}
+#note:active {
+  transform: scale(0.98);
+}
+#note code {
+  color: #476582;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+#note blockquote {
+  padding: 0.1rem 1.5rem;
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  margin: 1rem 0;
+  background-color: #f8f8f8;
+  border-color: #42b983;
+}
+
+@media (max-width: 375px) {
+  #note.show {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+}
+
+.container .icon {
+  width: 20vw;
+}
+
+.container .icon path {
+  fill: transparent;
+  stroke-width: 10;
+  stroke: #31e8ff;
+}
+
+.container .icon.heart path {
+  stroke-dasharray: 3080;
+  stroke-dashoffset: 0;
+}
+
+.container .icon.heart:hover path {
+  animation: animate-heart 2s linear forwards;
+}
+.container .icon.moon:hover path {
+  animation: animate-moon 2s linear forwards;
+}
+.container .icon.star:hover path {
+  animation: animate-star 2s linear forwards;
+}
+
+.container .icon.moon path {
+  stroke-dasharray: 3080;
+  stroke-dashoffset: 0;
+}
+.container .icon.star path {
+  stroke-dasharray: 3100;
+  stroke-dashoffset: 0;
+}
+
+@keyframes animate-heart {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 3080;
+  }
+  80% {
+    stroke-dashoffset: 6160;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 6160;
+    fill: #31e8ff;
+  }
+}
+
+@keyframes animate-moon {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 3080;
+  }
+  80% {
+    stroke-dashoffset: 6160;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 6160;
+    fill: #31e8ff;
+  }
+}
+
+@keyframes animate-star {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 3100;
+  }
+  80% {
+    stroke-dashoffset: 6200;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 6200;
+    fill: #31e8ff;
+  }
+}
